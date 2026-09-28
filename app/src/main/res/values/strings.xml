@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AppEleicao</string>
+
+    <string name="login_titulo">Pesquisa Eleitoral</string>
+    <string name="login_subtitulo">Entre para acessar o sistema</string>
+    <string name="login_usuario">Usuário</string>
+    <string name="login_senha">Senha</string>
+    <string name="login_acessar">Acessar</string>
+    <string name="login_finalizar">Finalizar</string>
+
+    <string name="login_usuario_obrigatorio">Informe o usuário</string>
+    <string name="login_senha_obrigatoria">Informe a senha</string>
+    <string name="login_erro">Usuário ou senha incorretos</string>
+
+    <string name="login_admin_sucesso">Login de administrador realizado!</string>
+    <string name="login_entrevistador_sucesso">Login de entrevistador realizado!</string>
 </resources>
