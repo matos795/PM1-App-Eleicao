@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/menu_estimulada"
-            android:enabled="false" />
+            android:enabled="true" />
 
         <Button
             android:id="@+id/btnPesquisaProblemas"

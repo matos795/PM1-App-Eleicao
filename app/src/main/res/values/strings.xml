@@ -36,4 +36,20 @@
     <string name="espontanea_confirmar">Confirmar resposta</string>
     <string name="espontanea_guardada">Resposta guardada no rascunho.</string>
     <string name="pesquisa_voltar">Voltar sem confirmar</string>
+
+    <string name="estimulada_titulo">Pesquisa estimulada</string>
+    <string name="estimulada_pergunta">Entre estas opções, em quem você pretende votar?</string>
+    <string name="estimulada_confirmar">Confirmar resposta</string>
+    <string name="estimulada_obrigatoria">Selecione uma opção antes de confirmar.</string>
+    <string name="estimulada_guardada">Resposta estimulada guardada no rascunho.</string>
+
+    <string name="candidato_1">Ana Silva</string>
+    <string name="candidato_2">Bruno Costa</string>
+    <string name="candidato_3">Carla Souza</string>
+    <string name="candidato_4">Diego Lima</string>
+    <string name="candidato_5">Elisa Santos</string>
+
+    <string name="voto_branco">Branco</string>
+    <string name="voto_nulo">Nulo</string>
+    <string name="voto_nao_sei">Não sei</string>
 </resources>
