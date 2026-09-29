@@ -1,11 +1,11 @@
 package com.example.appeleicao
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -81,21 +81,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (usuario == "admin" && senha == "admin") {
-            Toast.makeText(
+            val telaAdmin = Intent(
                 this,
-                R.string.login_admin_sucesso,
-                Toast.LENGTH_SHORT
-            ).show()
+                MenuAdminActivity::class.java
+            )
+
+            startActivity(telaAdmin)
+            finish()
 
         } else if (
             usuario == "entrevistador" &&
             senha == "entrevistador"
         ) {
-            Toast.makeText(
+            val telaEntrevistador = Intent(
                 this,
-                R.string.login_entrevistador_sucesso,
-                Toast.LENGTH_SHORT
-            ).show()
+                MenuEntrevistadorActivity::class.java
+            )
+
+            startActivity(telaEntrevistador)
+            finish()
 
         } else {
             tvErro.text = getString(R.string.login_erro)

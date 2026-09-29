@@ -14,4 +14,17 @@
 
     <string name="login_admin_sucesso">Login de administrador realizado!</string>
     <string name="login_entrevistador_sucesso">Login de entrevistador realizado!</string>
+
+    <string name="menu_admin_titulo">Área do administrador</string>
+    <string name="menu_entrevistados">Consultar entrevistados</string>
+    <string name="menu_resultados">Resultados das pesquisas</string>
+    <string name="menu_limpar">Limpar dados da pesquisa</string>
+
+    <string name="menu_entrevistador_titulo">Área do entrevistador</string>
+    <string name="menu_completa">Pesquisa completa</string>
+    <string name="menu_espontanea">Pesquisa espontânea</string>
+    <string name="menu_estimulada">Pesquisa estimulada</string>
+    <string name="menu_problemas">Pesquisa de problemas</string>
+
+    <string name="menu_sair">Sair da conta</string>
 </resources>
