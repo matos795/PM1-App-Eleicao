@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 class MenuEntrevistadorActivity : AppCompatActivity() {
 
     private lateinit var btnSairConta: Button
+    private lateinit var btnPesquisaEspontanea: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +19,12 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu_entrevistador)
 
         btnSairConta = findViewById(R.id.btnSairConta)
+
+        btnPesquisaEspontanea = findViewById(R.id.btnPesquisaEspontanea)
+
+        btnPesquisaEspontanea.setOnClickListener {
+            abrirPesquisaEspontanea()
+        }
 
         btnSairConta.setOnClickListener {
             sairDaConta()
@@ -39,6 +46,15 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
 
             insets
         }
+    }
+
+    private fun abrirPesquisaEspontanea() {
+        val telaPesquisa = Intent(
+            this,
+            PesquisaEspontaneaActivity::class.java
+        )
+
+        startActivity(telaPesquisa)
     }
 
     private fun sairDaConta() {

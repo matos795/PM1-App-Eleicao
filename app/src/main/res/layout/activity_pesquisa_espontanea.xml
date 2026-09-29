@@ -16,49 +16,49 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:text="@string/menu_entrevistador_titulo"
+            android:text="@string/espontanea_titulo"
             android:textSize="26sp"
             android:textStyle="bold"
             android:gravity="center" />
 
-        <Button
-            android:id="@+id/btnPesquisaCompleta"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/menu_completa"
-            android:enabled="false" />
+            android:layout_marginTop="24dp"
+            android:text="@string/espontanea_pergunta"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/espontanea_orientacao"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etRespostaEspontanea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:minHeight="48dp"
+            android:hint="@string/espontanea_resposta"
+            android:inputType="textCapSentences"
+            android:maxLength="100"
+            android:maxLines="1" />
 
         <Button
-            android:id="@+id/btnPesquisaEspontanea"
+            android:id="@+id/btnConfirmarEspontanea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/menu_espontanea"
-            android:enabled="true" />
+            android:layout_marginTop="24dp"
+            android:text="@string/espontanea_confirmar" />
 
         <Button
-            android:id="@+id/btnPesquisaEstimulada"
+            android:id="@+id/btnVoltar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/menu_estimulada"
-            android:enabled="false" />
-
-        <Button
-            android:id="@+id/btnPesquisaProblemas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/menu_problemas"
-            android:enabled="false" />
-
-        <Button
-            android:id="@+id/btnSairConta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/menu_sair" />
+            android:layout_marginTop="8dp"
+            android:text="@string/pesquisa_voltar" />
 
     </LinearLayout>
 

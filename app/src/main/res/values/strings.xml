@@ -27,4 +27,13 @@
     <string name="menu_problemas">Pesquisa de problemas</string>
 
     <string name="menu_sair">Sair da conta</string>
+
+    <string name="espontanea_titulo">Pesquisa espontânea</string>
+    <string name="espontanea_pergunta">Em quem você pretende votar?</string>
+    <string name="espontanea_orientacao">Registre a resposta sem apresentar opções de candidatos.</string>
+    <string name="espontanea_resposta">Resposta do entrevistado</string>
+    <string name="espontanea_obrigatoria">Informe a resposta do entrevistado</string>
+    <string name="espontanea_confirmar">Confirmar resposta</string>
+    <string name="espontanea_guardada">Resposta guardada no rascunho.</string>
+    <string name="pesquisa_voltar">Voltar sem confirmar</string>
 </resources>
