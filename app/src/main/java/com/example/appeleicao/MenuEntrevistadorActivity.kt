@@ -13,6 +13,7 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
     private lateinit var btnSairConta: Button
     private lateinit var btnPesquisaEspontanea: Button
     private lateinit var btnPesquisaEstimulada: Button
+    private lateinit var btnPesquisaProblemas: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,13 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
         btnPesquisaEspontanea = findViewById(R.id.btnPesquisaEspontanea)
 
         btnPesquisaEstimulada = findViewById(R.id.btnPesquisaEstimulada)
+
+        btnPesquisaProblemas = findViewById(R.id.btnPesquisaProblemas
+        )
+
+        btnPesquisaProblemas.setOnClickListener {
+            abrirPesquisaProblemas()
+        }
 
         btnPesquisaEstimulada.setOnClickListener {
             abrirPesquisaEstimulada()
@@ -68,6 +76,15 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
         val telaPesquisa = Intent(
             this,
             PesquisaEstimuladaActivity::class.java
+        )
+
+        startActivity(telaPesquisa)
+    }
+
+    private fun abrirPesquisaProblemas() {
+        val telaPesquisa = Intent(
+            this,
+            PesquisaProblemasActivity::class.java
         )
 
         startActivity(telaPesquisa)

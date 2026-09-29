@@ -52,4 +52,21 @@
     <string name="voto_branco">Branco</string>
     <string name="voto_nulo">Nulo</string>
     <string name="voto_nao_sei">Não sei</string>
+
+    <string name="problemas_titulo">Principais problemas</string>
+    <string name="problemas_orientacao">Selecione exatamente três problemas apontados pelo entrevistado.</string>
+    <string name="problemas_confirmar">Confirmar problemas</string>
+    <string name="problemas_quantidade_invalida">Selecione exatamente três problemas. Você selecionou %1$d.</string>
+    <string name="problemas_guardados">Problemas guardados no rascunho.</string>
+
+    <string name="problema_1">Saúde</string>
+    <string name="problema_2">Educação</string>
+    <string name="problema_3">Transporte público</string>
+    <string name="problema_4">Segurança</string>
+    <string name="problema_5">Saneamento básico</string>
+    <string name="problema_6">Iluminação pública</string>
+    <string name="problema_7">Pavimentação das ruas</string>
+    <string name="problema_8">Coleta de lixo</string>
+    <string name="problema_9">Desemprego</string>
+    <string name="problema_10">Falta de áreas de lazer</string>
 </resources>
