@@ -1,5 +1,6 @@
 package com.example.appeleicao
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -97,13 +98,12 @@ class PesquisaProblemasActivity : AppCompatActivity() {
 
         PesquisaAtual.problemasSelecionados = selecionados.toList()
 
-        Toast.makeText(
+        val proximaTela = Intent(
             this,
-            R.string.problemas_guardados,
-            Toast.LENGTH_SHORT
-        ).show()
+            DadosEntrevistadoActivity::class.java
+        )
 
-        finish()
+        startActivity(proximaTela)
     }
 
     private fun restaurarProblemas() {

@@ -69,4 +69,13 @@
     <string name="problema_8">Coleta de lixo</string>
     <string name="problema_9">Desemprego</string>
     <string name="problema_10">Falta de áreas de lazer</string>
+
+    <string name="dados_titulo">Dados do entrevistado</string>
+    <string name="dados_orientacao">Informe o nome e o celular com DDD.</string>
+    <string name="dados_nome">Nome do entrevistado</string>
+    <string name="dados_celular">Celular com DDD</string>
+    <string name="dados_confirmar">Confirmar dados do rascunho</string>
+    <string name="dados_nome_obrigatorio">Informe o nome do entrevistado</string>
+    <string name="dados_celular_invalido">Informe 11 dígitos: DDD e celular iniciado por 9.</string>
+    <string name="dados_confirmados">Dados confirmados no rascunho. A entrevista ainda não foi gravada.</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.appeleicao
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioGroup
@@ -85,13 +86,21 @@ class PesquisaEstimuladaActivity : AppCompatActivity() {
 
         PesquisaAtual.respostaEstimulada = codigoResposta
 
-        Toast.makeText(
-            this,
-            R.string.estimulada_guardada,
-            Toast.LENGTH_SHORT
-        ).show()
+        if (PesquisaAtual.tipo == TipoPesquisa.COMPLETA) {
+            val proximaTela = Intent(
+                this,
+                PesquisaProblemasActivity::class.java
+            )
 
-        finish()
+            startActivity(proximaTela)
+        } else {
+            val proximaTela = Intent(
+                this,
+                DadosEntrevistadoActivity::class.java
+            )
+
+            startActivity(proximaTela)
+        }
     }
 
     private fun restaurarResposta() {

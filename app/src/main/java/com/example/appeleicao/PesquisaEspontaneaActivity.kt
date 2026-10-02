@@ -1,5 +1,6 @@
 package com.example.appeleicao
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -79,12 +80,20 @@ class PesquisaEspontaneaActivity : AppCompatActivity() {
 
         PesquisaAtual.respostaEspontanea = resposta
 
-        Toast.makeText(
-            this,
-            R.string.espontanea_guardada,
-            Toast.LENGTH_SHORT
-        ).show()
+        if (PesquisaAtual.tipo == TipoPesquisa.COMPLETA) {
+            val proximaTela = Intent(
+                this,
+                PesquisaEstimuladaActivity::class.java
+            )
 
-        finish()
+            startActivity(proximaTela)
+        } else {
+            val proximaTela = Intent(
+                this,
+                DadosEntrevistadoActivity::class.java
+            )
+
+            startActivity(proximaTela)
+        }
     }
 }

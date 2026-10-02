@@ -15,6 +15,8 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
     private lateinit var btnPesquisaEstimulada: Button
     private lateinit var btnPesquisaProblemas: Button
 
+    private lateinit var btnPesquisaCompleta: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,8 +28,13 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
 
         btnPesquisaEstimulada = findViewById(R.id.btnPesquisaEstimulada)
 
-        btnPesquisaProblemas = findViewById(R.id.btnPesquisaProblemas
-        )
+        btnPesquisaProblemas = findViewById(R.id.btnPesquisaProblemas)
+
+        btnPesquisaCompleta = findViewById(R.id.btnPesquisaCompleta)
+
+        btnPesquisaCompleta.setOnClickListener {
+            abrirPesquisaCompleta()
+        }
 
         btnPesquisaProblemas.setOnClickListener {
             abrirPesquisaProblemas()
@@ -64,6 +71,8 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
     }
 
     private fun abrirPesquisaEspontanea() {
+        PesquisaAtual.iniciar(TipoPesquisa.ESPONTANEA)
+
         val telaPesquisa = Intent(
             this,
             PesquisaEspontaneaActivity::class.java
@@ -73,6 +82,8 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
     }
 
     private fun abrirPesquisaEstimulada() {
+        PesquisaAtual.iniciar(TipoPesquisa.ESTIMULADA)
+
         val telaPesquisa = Intent(
             this,
             PesquisaEstimuladaActivity::class.java
@@ -82,9 +93,22 @@ class MenuEntrevistadorActivity : AppCompatActivity() {
     }
 
     private fun abrirPesquisaProblemas() {
+        PesquisaAtual.iniciar(TipoPesquisa.PROBLEMAS)
+
         val telaPesquisa = Intent(
             this,
             PesquisaProblemasActivity::class.java
+        )
+
+        startActivity(telaPesquisa)
+    }
+
+    private fun abrirPesquisaCompleta() {
+        PesquisaAtual.iniciar(TipoPesquisa.COMPLETA)
+
+        val telaPesquisa = Intent(
+            this,
+            PesquisaEspontaneaActivity::class.java
         )
 
         startActivity(telaPesquisa)
