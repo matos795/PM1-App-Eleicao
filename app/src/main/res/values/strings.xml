@@ -119,4 +119,6 @@
     <string name="admin_apagar">Apagar</string>
     <string name="admin_apagados">Dados da pesquisa apagados.</string>
     <string name="admin_sem_dados">Não há entrevistas para apagar.</string>
+    <string name="abertura_imagem">Urna com uma cédula marcada</string>
+    <string name="abertura_subtitulo">Sistema para coleta de pesquisas</string>
 </resources>
