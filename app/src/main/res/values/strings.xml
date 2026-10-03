@@ -78,4 +78,13 @@
     <string name="dados_nome_obrigatorio">Informe o nome do entrevistado</string>
     <string name="dados_celular_invalido">Informe 11 dígitos: DDD e celular iniciado por 9.</string>
     <string name="dados_confirmados">Dados confirmados no rascunho. A entrevista ainda não foi gravada.</string>
+
+    <string name="localizacao_buscando">Obtendo localização…</string>
+    <string name="localizacao_negada">Permita o acesso à localização para confirmar a entrevista. Se necessário, habilite a permissão nas configurações do aplicativo.</string>
+    <string name="localizacao_indisponivel">Não foi possível obter a localização. Confira se a localização do aparelho está ativada e tente novamente.</string>
+    <string name="localizacao_falhou">Falha ao consultar a localização. Tente novamente.</string>
+    <string name="localizacao_interrompida">Busca interrompida. Confirme novamente para tentar.</string>
+    <string name="rascunho_titulo">Dados capturados</string>
+    <string name="rascunho_detalhes">Data e hora: %1$s\nLatitude: %2$s\nLongitude: %3$s\nPrecisão estimada: %4$s m\n\nDados mantidos apenas no rascunho em memória.</string>
+    <string name="voltar_menu">Voltar ao menu</string>
 </resources>

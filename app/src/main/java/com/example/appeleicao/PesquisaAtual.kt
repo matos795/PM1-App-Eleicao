@@ -18,6 +18,11 @@ object PesquisaAtual {
     var nome: String = ""
     var celular: String = ""
 
+    var latitude: Double? = null
+    var longitude: Double? = null
+    var precisaoMetros: Float? = null
+    var dataHora: Long? = null
+
     fun iniciar(novoTipo: TipoPesquisa) {
         limpar()
         tipo = novoTipo
@@ -30,5 +35,9 @@ object PesquisaAtual {
         problemasSelecionados = emptyList()
         nome = ""
         celular = ""
+        latitude = null
+        longitude = null
+        precisaoMetros = null
+        dataHora = null
     }
 }
