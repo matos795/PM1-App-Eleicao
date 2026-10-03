@@ -48,6 +48,7 @@
             android:name=".DadosEntrevistadoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".PainelPesquisaActivity" android:exported="false" />
     </application>
 
 </manifest>

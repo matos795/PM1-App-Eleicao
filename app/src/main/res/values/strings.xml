@@ -93,4 +93,30 @@
     <string name="entrevista_salva_mensagem">Entrevista registrada na memória.\n\nTotal de entrevistas: %1$d</string>
     <string name="entrevista_incompleta">Faltam respostas obrigatórias. Volte às perguntas ou inicie uma nova pesquisa.</string>
     <string name="entrevista_sem_localizacao">Não foi possível confirmar os dados de localização. Tente novamente.</string>
+
+    <string name="painel_inicio">Data inicial</string>
+    <string name="painel_fim">Data final</string>
+    <string name="painel_remover_filtro">Remover filtro de período</string>
+    <string name="painel_data_botao">%1$s: %2$s</string>
+    <string name="painel_sem_limite">Sem limite</string>
+    <string name="painel_total">Total registrado: %1$d entrevistas</string>
+    <string name="painel_periodo">No período: %1$d entrevistas</string>
+    <string name="painel_vazio">Nenhuma entrevista encontrada neste período.</string>
+    <string name="painel_base">Base: %1$d respostas</string>
+    <string name="painel_base_estimulada">Base: %1$d respostas, incluindo Branco, Nulo e Não sei.</string>
+    <string name="painel_base_problemas">Base: %1$d entrevistas com problemas. Cada entrevista cita três problemas; a soma das porcentagens pode ultrapassar 100%%.</string>
+    <string name="painel_contagem">%1$d — %2$s%%</string>
+    <string name="painel_datas_invalidas">A data inicial não pode ser posterior à final.</string>
+    <string name="painel_dados">Celular: %1$s\nTipo: %2$s\nData: %3$s\nLatitude: %4$s\nLongitude: %5$s\nPrecisão estimada: %6$s m</string>
+    <string name="painel_espontanea">Espontânea: %1$s</string>
+    <string name="painel_estimulada">Estimulada: %1$s</string>
+    <string name="painel_problemas">Problemas: %1$s</string>
+    <string name="painel_sem_respostas">Sem respostas nesta modalidade.</string>
+    <string name="painel_resposta_invalida">Resposta inválida</string>
+    <string name="admin_limpar_titulo">Apagar todas as entrevistas?</string>
+    <string name="admin_limpar_mensagem">Serão apagadas %1$d entrevistas e seus resultados. Esta ação não pode ser desfeita.</string>
+    <string name="admin_cancelar">Cancelar</string>
+    <string name="admin_apagar">Apagar</string>
+    <string name="admin_apagados">Dados da pesquisa apagados.</string>
+    <string name="admin_sem_dados">Não há entrevistas para apagar.</string>
 </resources>

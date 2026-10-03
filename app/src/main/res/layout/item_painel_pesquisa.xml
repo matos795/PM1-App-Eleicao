@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:paddingTop="16dp" android:paddingBottom="8dp">
+    <TextView android:id="@+id/tvItemTitulo"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="18sp" android:textStyle="bold" />
+    <TextView android:id="@+id/tvItemDetalhes"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textSize="16sp" />
+    <ProgressBar android:id="@+id/barraResultado"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent" android:layout_height="16dp"
+        android:layout_marginTop="6dp" android:indeterminate="false"
+        android:max="1000" android:visibility="gone" />
+</LinearLayout>
