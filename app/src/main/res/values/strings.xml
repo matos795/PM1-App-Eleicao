@@ -87,4 +87,10 @@
     <string name="rascunho_titulo">Dados capturados</string>
     <string name="rascunho_detalhes">Data e hora: %1$s\nLatitude: %2$s\nLongitude: %3$s\nPrecisão estimada: %4$s m\n\nDados mantidos apenas no rascunho em memória.</string>
     <string name="voltar_menu">Voltar ao menu</string>
+
+    <string name="entrevista_concluir">Concluir entrevista</string>
+    <string name="entrevista_salva_titulo">Entrevista registrada</string>
+    <string name="entrevista_salva_mensagem">Entrevista registrada na memória.\n\nTotal de entrevistas: %1$d</string>
+    <string name="entrevista_incompleta">Faltam respostas obrigatórias. Volte às perguntas ou inicie uma nova pesquisa.</string>
+    <string name="entrevista_sem_localizacao">Não foi possível confirmar os dados de localização. Tente novamente.</string>
 </resources>

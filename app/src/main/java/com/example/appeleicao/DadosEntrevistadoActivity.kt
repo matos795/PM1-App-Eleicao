@@ -20,9 +20,6 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class DadosEntrevistadoActivity : AppCompatActivity() {
 
@@ -97,6 +94,11 @@ class DadosEntrevistadoActivity : AppCompatActivity() {
 
     private fun confirmarDados() {
         if (buscaAtual != null) {
+            return
+        }
+
+        if (!respostasEstaoCompletas()) {
+            mostrarMensagem(R.string.entrevista_incompleta)
             return
         }
 
@@ -193,7 +195,7 @@ class DadosEntrevistadoActivity : AppCompatActivity() {
                     PesquisaAtual.precisaoMetros = localizacao.accuracy
                     PesquisaAtual.dataHora = instante
 
-                    exibirDadosCapturados(instante)
+                    registrarEntrevista()
                 }
 
             }.addOnFailureListener {
@@ -221,39 +223,98 @@ class DadosEntrevistadoActivity : AppCompatActivity() {
             if (buscando) {
                 R.string.localizacao_buscando
             } else {
-                R.string.dados_confirmar
+                R.string.entrevista_concluir
             }
         )
     }
 
-    private fun exibirDadosCapturados(instante: Long) {
-        val formato = SimpleDateFormat(
-            "dd/MM/yyyy HH:mm:ss",
-            Locale.getDefault()
+    private fun mostrarMensagem(texto: Int) {
+        Toast.makeText(this, texto, Toast.LENGTH_LONG).show()
+    }
+
+    private fun respostasEstaoCompletas(): Boolean {
+        val espontaneaValida = PesquisaAtual.respostaEspontanea.isNotBlank()
+
+        val estimuladaValida = PesquisaAtual.respostaEstimulada in 1..8
+
+        val problemas = PesquisaAtual.problemasSelecionados
+
+        val problemasValidos =
+            problemas.size == 3 &&
+                    problemas.distinct().size == 3 &&
+                    problemas.all { it in 1..10 }
+
+        return when (PesquisaAtual.tipo) {
+            TipoPesquisa.ESPONTANEA -> espontaneaValida
+
+            TipoPesquisa.ESTIMULADA -> estimuladaValida
+
+            TipoPesquisa.PROBLEMAS -> problemasValidos
+
+            TipoPesquisa.COMPLETA ->
+                espontaneaValida &&
+                        estimuladaValida &&
+                        problemasValidos
+        }
+    }
+
+    private fun registrarEntrevista() {
+        if (!respostasEstaoCompletas()) {
+            mostrarMensagem(R.string.entrevista_incompleta)
+            return
+        }
+
+        val latitude = PesquisaAtual.latitude
+        val longitude = PesquisaAtual.longitude
+        val precisao = PesquisaAtual.precisaoMetros
+        val dataHora = PesquisaAtual.dataHora
+
+        if (
+            latitude == null ||
+            longitude == null ||
+            precisao == null ||
+            dataHora == null
+        ) {
+            mostrarMensagem(R.string.entrevista_sem_localizacao)
+            return
+        }
+
+        val entrevista = Entrevista(
+            tipo = PesquisaAtual.tipo,
+            respostaEspontanea = PesquisaAtual.respostaEspontanea,
+            respostaEstimulada = PesquisaAtual.respostaEstimulada,
+            problemasSelecionados =
+                PesquisaAtual.problemasSelecionados.toList(),
+            nome = PesquisaAtual.nome,
+            celular = PesquisaAtual.celular,
+            latitude = latitude,
+            longitude = longitude,
+            precisaoMetros = precisao,
+            dataHora = dataHora
         )
 
-        val dataFormatada = formato.format(Date(instante))
+        DadosPesquisa.adicionar(entrevista)
+
+        PesquisaAtual.limpar()
+
+        btnConfirmarDados.isEnabled = false
+        btnVoltar.isEnabled = false
+        etNomeEntrevistado.isEnabled = false
+        etCelularEntrevistado.isEnabled = false
 
         val mensagem = getString(
-            R.string.rascunho_detalhes,
-            dataFormatada,
-            PesquisaAtual.latitude.toString(),
-            PesquisaAtual.longitude.toString(),
-            PesquisaAtual.precisaoMetros.toString()
+            R.string.entrevista_salva_mensagem,
+            DadosPesquisa.quantidade()
         )
 
         AlertDialog.Builder(this)
-            .setTitle(R.string.rascunho_titulo)
+            .setTitle(R.string.entrevista_salva_titulo)
             .setMessage(mensagem)
             .setCancelable(false)
             .setPositiveButton(R.string.voltar_menu) { _, _ ->
                 voltarAoMenu()
             }
             .show()
-    }
-
-    private fun mostrarMensagem(texto: Int) {
-        Toast.makeText(this, texto, Toast.LENGTH_LONG).show()
     }
 
     private fun voltarAoMenu() {
