@@ -18,7 +18,6 @@ import java.util.Date
 import java.util.Locale
 import kotlin.math.roundToInt
 
-// Uma Activity, com dois modos: consulta de entrevistas ou resultados.
 class PainelPesquisaActivity : AppCompatActivity() {
     private lateinit var containerRegistros: LinearLayout
     private lateinit var btnDataInicial: Button
@@ -64,7 +63,11 @@ class PainelPesquisaActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.tvTituloPainel).setText(
-            if (mostrarResultados) R.string.menu_resultados else R.string.menu_entrevistados
+            if (mostrarResultados) {
+                R.string.menu_resultados
+            } else {
+                R.string.menu_entrevistados
+            }
         )
         btnDataInicial.setOnClickListener { escolherData(true) }
         btnDataFinal.setOnClickListener { escolherData(false) }
@@ -100,7 +103,6 @@ class PainelPesquisaActivity : AppCompatActivity() {
             fim?.let { formatarData(it) } ?: getString(R.string.painel_sem_limite)
         )
 
-        // Fim exclusivo no início do dia seguinte: inclui o dia final inteiro.
         val limiteInicial = inicio
         val limiteFinal = fim?.let { diaSeguinte(it) }
         val registros = DadosPesquisa.listar().filter {
@@ -136,27 +138,6 @@ class PainelPesquisaActivity : AppCompatActivity() {
                 entrevista.latitude.toString(), entrevista.longitude.toString(),
                 entrevista.precisaoMetros.toString()
             )
-
-            if (entrevista.tipo == TipoPesquisa.ESPONTANEA ||
-                entrevista.tipo == TipoPesquisa.COMPLETA) {
-                detalhes += "\n" + getString(
-                    R.string.painel_espontanea, entrevista.respostaEspontanea
-                )
-            }
-            if (entrevista.tipo == TipoPesquisa.ESTIMULADA ||
-                entrevista.tipo == TipoPesquisa.COMPLETA) {
-                val candidato = candidatos.getOrElse(entrevista.respostaEstimulada - 1) {
-                    getString(R.string.painel_resposta_invalida)
-                }
-                detalhes += "\n" + getString(R.string.painel_estimulada, candidato)
-            }
-            if (entrevista.tipo == TipoPesquisa.PROBLEMAS ||
-                entrevista.tipo == TipoPesquisa.COMPLETA) {
-                val nomes = entrevista.problemasSelecionados.joinToString {
-                    problemas.getOrElse(it - 1) { getString(R.string.painel_resposta_invalida) }
-                }
-                detalhes += "\n" + getString(R.string.painel_problemas, nomes)
-            }
             adicionarItem(entrevista.nome, detalhes)
         }
     }
@@ -172,7 +153,6 @@ class PainelPesquisaActivity : AppCompatActivity() {
         if (espontaneas.isEmpty()) {
             adicionarItem(getString(R.string.painel_sem_respostas))
         } else {
-            // Normaliza caixa e espaços; grafias diferentes continuam separadas.
             val contagens = espontaneas.groupingBy {
                 it.respostaEspontanea.trim().lowercase(Locale.ROOT)
                     .replace(Regex("\\s+"), " ")
@@ -218,7 +198,6 @@ class PainelPesquisaActivity : AppCompatActivity() {
         )
     }
 
-    // Reaproveita o modelo XML para cada entrevista ou linha de resultado.
     private fun adicionarItem(titulo: String, detalhes: String = "", progresso: Int? = null) {
         val item = layoutInflater.inflate(
             R.layout.item_painel_pesquisa, containerRegistros, false

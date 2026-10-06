@@ -9,8 +9,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
-// Tela introdutória do trabalho: exibe a imagem e depois abre o login.
 class AberturaActivity : AppCompatActivity() {
 
     private val handler = Handler(Looper.getMainLooper())
